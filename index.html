@@ -1,47 +1,101 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="styles.css">
+        <script src="https://kit.fontawesome.com/850e5691c2.js" crossorigin="anonymous"></script>
+        <link rel="icon" href="images/favicon.ico" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="header-container">
+            <nav>
+                <img class="logo" src="images/favicon.ico" alt="logo" height="40px" width="auto"/>
+                <a href="#home-container" class="home">Home</a>
+                <a href="#about" class="about">About</a>
+                <a href="#projects" class="projects">Projects</a>
+                <a href="#skills" class="skills">Skills</a>
+                <a href="#contact" class="contact">Contact</a>
+            </nav>
+            <div id="home-container">
+                <div class="intro">
+                    <h1 class="name">I'm Nyjia Scott</h1>
+                    <h3 class="description">A creative developer <span class="description-pt2">motivated to produce</span> <span class="description-pt3">dependable code.</span></h3>
+                    <!-- <h3 class="description">A creative developer</h3>
+                    <h3 class="description-pt2">motivated to produce</h3>
+                    <h3 class="description-pt3">dependable code.</h3> -->
+                    <!-- <h3 class="description">[Tagline]</h3> -->
+                    <!--   -->
+                </div>
+                
+            </div>
+        </div>
+        <hr>
+        <div id="about">
+            <h2 class="about-title">About</h2>
+            <div class="about-info">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nisi lacus sed viverra tellus in hac habitasse platea. At varius vel pharetra vel turpis nunc eget lorem dolor. Suspendisse ultrices gravida dictum fusce ut placerat orci nulla pellentesque. Sed blandit libero volutpat sed. Gravida rutrum quisque non tellus orci. Urna nec tincidunt praesent semper feugiat nibh sed pulvinar proin. Amet cursus sit amet dictum sit amet justo donec enim.</p>
+            </div>
+        </div>
+        <hr>
+        <div id="projects">
+            <h2 class="projects-title">Projects</h2>
+            <div class="projects-container">
+                <div class="proj-1">Project 1</div>
+                <div class="proj-2">Project 2</div>
+                <div class="proj-3">Project 3</div>
+                <div class="proj-4">Project 4</div>
+            </div>
+        </div>
+        <!-- <script src="" async defer></script> -->
+        <hr>
+        <div id="skills">
+            <h2 class="skills-title">Skills</h2>
+            <div class="skills-container">
+                <div class="skills-section-1">
+                    <h2 class="html"><i class="fab fa-html5"> HTML5</i></h2>
+                    <h2 class="js"><i class="fab fa-js-square"> JavaScript</i></h2>
+                    <h2 class="css"><i class="fab fa-css3-alt"> CSS3</i></h2>
+                </div>    
+                <div class="skills-section-2">
+                    <h2 class="react"><i class="fab fa-react"> React.js</i></h2>
+                    <h2 class="node"><i class="fab fa-node-js"> Node.js</i></h2>
+                    <h2 class="node"><i class="fab fa-node-js"> Express.js</i></h2>
+                </div>
+            </div>
+        </div>
+    </body>
+    <hr>
+    <div id="contact">
+        
+        <h2 class="contact-title">Contact</h2>
+<!-- <video class="contact-background" width="320" height="240" autoplay muted>
+            <source src="images/profile-pic-animation.mp4" type="video/mp4">
+          </video> -->
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Ewert&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Ultra&display=swap" rel="stylesheet">
-    <title>React App</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+        <!-- <div class="profile-pic-container"> -->
+            <!-- <img class="profile-pic" src="images/profile-pic1-removebg.jpg" alt="image"> -->
+        <footer>
+            <div class="footer-links">
+                <h3 class="linkedin"><a title="My LinkedIn" href="https://www.linkedin.com/in/nyjia-scott/"><i class="fab fa-linkedin"></i></a></h3>
+                <h3 class="github"><a title="My GitHub" href="https://github.com/nks397"><i class="fab fa-github-square"></i></a></h3>
+                <h3 class="email"><a title="Contact Me via Email"href="mailto:nkscott97@gmail.com?subject = Feedback&body = Message"><i class="fas fa-envelope"></i></a></h3>
+                <h3 title="My Resume" class="download-resume"><i class="fas fa-file"></i></h3>
+            </div>
+            <!-- <h4>Email: nkscott97@gmail.com</h4> -->
+        </footer>
+        
+    </div>
 </html>
+
+<!-- notes -->
+<!-- task: css when clicking on link it stays active -->
