@@ -1,305 +1,47 @@
 * {
-    margin: auto;
-    font-family: 'Poppins', sans-serif;
-}
-
-html {
-    scroll-behavior: smooth;
-  }
-
-nav {
-    display: flex;
-    position: fixed;
-    top: 0;
-    z-index: 1;
-    width: 100%;
-    height: 60px;
-    /* background: rgba(0,0,0,0.7); */
-    background: rgba(0, 0, 0, 0.199);
-}
-
-body::-webkit-scrollbar {
-    width: 12px;
-}
- 
-body::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-}
- 
-body::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
-    /* background-color: rgb(226, 204, 107) */
-}
-
-body::-webkit-scrollbar-thumb:active {
-    border-radius: 10px;
-    /* box-shadow: inset 0 0 6px rgba(0,0,0,0.5);  */
-    /* background-color: rgb(226, 204, 107) */
-    background-color: #FFA;
-}
-
-.header-container {
-    /* background-image: url("images/gold-sunset.jpg"); */
-    /* background-image: url("https://images.unsplash.com/photo-1496181133206-80ce9b88a853?ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8cG9ydGZvbGlvJTIwYmFja2dyb3VuZCUyMGNvbXB1dGVyfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"); */
-    background-image: url("https://images.unsplash.com/photo-1515339760107-1952b7a08454?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTAxfHxwb3J0Zm9saW8lMjBiYWNrZ3JvdW5kJTIwY29tcHV0ZXJ8ZW58MHwwfDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60");
-    background-repeat: no-repeat;
-    background-size: cover;
-    font-family: 'Poppins', sans-serif;
-    height: 100vh;
-}
-
-.profile-pic-container {
- text-align: center;
- width: 600px;
- height: 450px;
- /* background:url("images/profile-pic1-removebg.jpg") no-repeat center; */
-
-}
-
-.profile-pic {
-    border-radius: 10px;
-}
-
-/* .logo:hover {
-    cursor: pointer;
-} */
-
-.intro {
-    text-align: center;
-    /* height: 500px; */
-    padding-top: 250px;
-    /* color: beige; */
-    /* color: rgb(226, 204, 107); */
-    /* -webkit-text-stroke:0.05px rgb(226, 204, 107); */
-    color: rgba(0, 0, 0, 0.856);
-    font-size: 30px;
-}
-
-.home, .about, .projects, .skills, .contact {
-    color: #fff;
-    text-transform: uppercase;
-    text-decoration: none;
-    letter-spacing: 0.15em;
+    margin-top: 0px;
+    margin-left: 10px;
+    margin-right: 10px;
+    /* background-image: linear-gradient( 90.5deg,  rgba(255,207,139,0.50) 1.1%, rgba(255,207,139,1) 81.3% ); */
     
-    display: inline-block;
-    padding: 15px 20px;
-    position: relative;
-  }
-  .home:after, .about:after, .projects:after, .skills:after, .contact:after {    
-    background: none repeat scroll 0 0 transparent;
-    bottom: 0;
-    content: "";
-    display: block;
-    height: 2px;
-    left: 50%;
-    position: absolute;
-    background: #fff;
-    transition: width 0.3s ease 0s, left 0.3s ease 0s;
-    width: 0;
-  }
-  .home:hover:after, .about:hover:after, .projects:hover:after, .skills:hover:after, .contact:hover:after { 
-    width: 100%; 
-    left: 0; 
-  }
-  @media screen and (max-height: 300px) {
-      ul {
-          margin-top: 40px;
-      }
-  }
-
-/* .proj-1, .proj-2, .proj-3, .proj-4 {
-    background-color: grey;
-    padding: 50px;
-} */
-
-.description {
-    color: rgba(0, 0, 0, 0.445);
-    font-family: 'Lato', sans-serif;
-}
-
-.home, .about, .skills, .projects, .contact {
-    color: beige;
-    font-size: 20px;
-    text-decoration: none;
-    scroll-behavior: smooth;
-}
-
-.home:hover, .about:hover, .skills:hover, .projects:hover, .contact:hover {
-    cursor: pointer;
-    color: rgb(235, 217, 115);
-    transition: all 0.3s ease-in-out;
-    font-weight: 500;
-}
-
-#about {
-    height: 100vh;
-    /* background-color: rgb(228, 199, 126); */
-    /* background-color: beige; */
+    background-image: url("https://images.unsplash.com/photo-1533613220915-609f661a6fe1?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3RhciUyMHdhcnN8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60");
+    background-repeat: none;
     background-size: cover;
-    background-repeat: no-repeat;
-    background-image: url("https://images.unsplash.com/photo-1521128236067-c0b43c4c3fa2?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzcxfHxsaWdodCUyMGdyZXklMjBuYXR1cmV8ZW58MHwwfDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60");
 }
 
-.about-info {
-    background-color: rgba(0, 0, 0, 0.199);
-    padding: 60px;
-    border-radius: 10px;
-    margin: 20px 300px;
-    color: beige;
-}
-
-.about-title {
-    padding-bottom: 50px;
-}
-
-#projects {
+.title {
     text-align: center;
-    /* height: 250px */
-    height: 100vh;
-    /* background-image: url("https://images.unsplash.com/photo-1596466790290-84e8f17b0d87?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NjJ8fGdvbGQlMjBhYnN0cmFjdHxlbnwwfDB8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"); */
-    background-repeat: no-repeat;
-    /* background-color: rgb(236, 214, 156); */
-    background-size: cover;
-    /* background-color: beige; */
-      background-image: url("https://images.unsplash.com/photo-1590142035743-0ffa020065e6?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjU0fHxsaWdodCUyMGdyZXklMjBuYXR1cmV8ZW58MHwwfDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60");
-    
+    font-family: 'Ewert', cursive;
+    color: rgb(82, 42, 10);
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.bounty-container {
 
 }
 
-.contact-background {
-    width: 100%;
-    height: 100vh;
-}
-
-.projects-container {
-    padding-top: 100px;
-    display: flex;
-    
-}
-
-#skills {
-    height: 100vh;
-    /* background-color: rgb(253, 229, 167); */
-    /* background-color: beige; */
-    background-image: url("https://images.unsplash.com/photo-1433575071379-4bdc07b13785?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDN8fGRhcmslMjBncmV5JTIwY29udGFjdHxlbnwwfDB8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60");
-    background-repeat: no-repeat;
-    background-size: cover;
-     
-}
-
-.skills-container {
-    display: flex;
-    font-size: 20px;
-    background-color: rgba(0, 0, 0, 0.199);
-    margin-left: 300px;
-    margin-right: 300px;
-    border-radius: 10px;
-    padding-top: 40px;
-    padding-bottom: 40px;
-   
-}
-
-.html, .js, .css, .react, .node {
-    /* color: rgba(0, 0, 0, 0.856); */
-    color: beige; 
-}
-
-#contact {
-    /* background-color: rgba(247, 215, 134, 0.438); */
-    background-color: beige;
-    background-image: url("https://images.unsplash.com/photo-1509023464722-18d996393ca8?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8ZGFyayUyMGdyZXl8ZW58MHwwfDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60");
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.skills-title {
-    padding-bottom: 50px;
-}
-
-/* .skills-section-1 {
-    background-color: rgba(0, 0, 0, 0.199);
-    padding: 30px;
-    border-radius: 10px;
-} */
-
-.contact-title, .about-title, .skills-title, .projects-title {
-    padding-top: 100px;
-    text-align: center;
-    font-size: 35px;
-    color: rgba(0, 0, 0, 0.856);
-}
-
-hr {
-    border: 0;
-    height: 3px;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
-
-}
-
-footer {
+.info {
+    /* width: 100%;
+    margin: 0 auto;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    /* height: 35px; */
-    padding: 10px 0px;
-    width: auto;
-    font-size: 25px;
-    height: 100vh;
-    
-
+    justify-content: center; */
+    font-family: 'Ultra', serif;
+    color: rgb(124, 103, 85);
 }
 
-.footer-links {
-    display: flex;
-    flex-direction: row;
-    /* justify-content: space-between; */
-    font-size: 50px;
+.bounty-list {
 }
 
-.github, .linkedin, .download-resume, .email {
-    margin-left: 50px;
-}
-a:hover {
-    color: blue;
+form {
+    padding-bottom: 20px;
 }
 
-.fa-linkedin:before, .fa-github-square:before, .fa-file:before, .fa-envelope:before {
-    color: beige;
+img#__lpform_firstName_icon {
+    display: none;
 }
 
-/* .fa-linkedin:hover, .fa-github-square:hover, .fa-file:hover {
-    transition: all 0.3s ease-in-out;
-    /* color: rgba(0, 0, 0, 0.473); */
-    /* color: black; */
-/* } */
-
-/* <h1 class="name">I'm Nyjia Scott </h1>
-                    <h3 class="description">A web developer...</h3> */
-
-@keyframes fadeInUp {
-    from { 
-      opacity: 0;
-      -webkit-transform: translate3d(0, 100%, 0);
-      transform: translate3d(0, 100%, 0);
-    }
-  
-    to {
-      opacity: 1;
-      -webkit-transform: none;
-      transform: none;
-    }
-  }
-  
-.name {
-    opacity: 0; 
-    animation: fadeInUp 1s ease-in-out 0s forwards;
-    animation-delay: 0.5s;
-}
-
-.description {
-    opacity: 0; 
-    animation: fadeInUp 1s ease-in-out 0s forwards;
-    animation-delay: 3s;
+button {
+    margin-bottom: 15px;
 }
