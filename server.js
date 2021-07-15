@@ -1,15 +1,8 @@
 const express = require("express")
 const app = express()
 
-// middleware
-app.use(express.json())
-
-
 // routes
-app.use("/sportsLeague", require("./middleware.js"))
-app.use("/favColors", require("./practice-middleware.js"))
-
+app.use("/todo", require("./todoListRouter.js"))
 
 // port
-app.listen(4000, () => {console.log("Port 4000 is running")})
-
+app.listen(6000, () => {console.log("Port 6000 is running")})
