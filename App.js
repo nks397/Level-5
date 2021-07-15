@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react"
 import axios from "axios"
-import Bounties from "./Bounties"
- 
+import BountyList from "./BountyList"
+
 function App(){ 
     const [bountyData, setBountyData] = useState([])
     const [firstName, setFirstName] = useState("")
@@ -11,7 +11,7 @@ function App(){
     const [type, setType] = useState("")
     
     useEffect(() => {
-        axios.get("/bounty")
+        axios.get("/bounties")
         .then(res => setBountyData(res.data))
         .catch(err => console.log(err))
     
@@ -30,7 +30,7 @@ function App(){
         }
         
         console.log(newPost, "newPost");
-        axios.post("/bounty", newPost)
+        axios.post("/bounties", newPost)
         .then(res => setBountyData(prevBountyData => [...prevBountyData, res.data]))
         
         .catch(err => console.log(err))
@@ -46,7 +46,7 @@ function App(){
 
     const handleUpdate = (e, edits, bountyId) => {
         e.preventDefault()
-        axios.put(`/bounty/${bountyId}`, edits)
+        axios.put(`/bounties/${bountyId}`, edits)
         .then(res => {
             setBountyData(prevBountyData => prevBountyData.map(bounty => bounty._id !== bountyId ? bounty : res.data))
             
@@ -55,7 +55,7 @@ function App(){
     }
 
     const handleDeletion = (bountyId) => {
-        axios.delete(`/bounty/${bountyId}`)
+        axios.delete(`/bounties/${bountyId}`)
         .then(() => {
             setBountyData(prevBountyData => prevBountyData.filter(bounty => bounty._id !== bountyId))
         })
@@ -65,8 +65,8 @@ function App(){
     }
 
     return(
-        <div>
-            <h1 class="title">Bounty Hunter Part 1: Wanted</h1>
+        <div className="main-container">
+            <h1 class="title">Bounty Hunter Part 2: Wanted for Murder</h1>
             <form onSubmit={handleSubmit}>
                 <input type="text" name="firstName" value={firstName} placeholder="First Name" onChange={(e)=>setFirstName(e.target.value)}/>
                 <input type="text" name="lastName" value={lastName} placeholder="Last Name" onChange={(e)=>setLastName(e.target.value)}/>
@@ -76,7 +76,7 @@ function App(){
                 <input type="reset" onClick={resetInputs}/>
                 <button >Submit</button>
             </form>
-            {bountyData.map(item => {return <Bounties key={item._id} id={item._id} firstName={item.firstName} setFirstName={item.setFirstName} lastName={item.lastName} setLastName={item.setLastName} living={item.living} setLiving={item.setLiving} bountyAmount={item.bountyAmount} setBountyAmount={item.setBountyAmount} type={item.type} setType={item.setType} handleDeletion={handleDeletion} handleUpdate={handleUpdate}/>})}
+            {bountyData.map(item => {return <BountyList key={item._id} id={item._id} firstName={item.firstName} setFirstName={item.setFirstName} lastName={item.lastName} setLastName={item.setLastName} living={item.living} setLiving={item.setLiving} bountyAmount={item.bountyAmount} setBountyAmount={item.setBountyAmount} type={item.type} setType={item.setType} handleDeletion={handleDeletion} handleUpdate={handleUpdate}/>})}
         </div>
     )
 
