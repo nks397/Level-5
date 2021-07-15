@@ -4,11 +4,9 @@
     
 }
 
-.main-container {
-    background-image: url("https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjh8fHN0YXIlMjB3YXJzfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60");
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100%;
+.initial-form {
+    background-color: rgba(0, 0, 0, 0.966);
+    padding-bottom: 40px;
 }
 
 input[type=text]:focus {
@@ -20,31 +18,35 @@ input[type=text]:focus {
 }
 
 input:focus {
-    outline: none;
+    outline: solid 1px coral;
 }
 
 input {
     font-family: 'Ultra', serif;
     background-color: white;
+    margin-left: 10px;
 }
 
 .title {
     color: coral;
     padding-top: 30px;
-    padding-bottom: 30px;
+    padding-bottom: 12px;
     font-family: 'Ewert', cursive;
+    font-size: 40px;
 }
 
-button {
+input[type="reset"] {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+button, input[type="reset"] {
     /* color: black;
     background-color: white;
     margin-top: 25px;
     font-family: 'Ultra', serif;
     border-radius: 25px; */
     margin-top: 25px;
-  padding: 3px 16px;
-  margin-right: 2px;
-  margin-left: 2px;
   font-weight: bold;
   text-align: center;
   
@@ -55,34 +57,35 @@ button {
   font-family: 'Ultra', serif;
 }
 
-button:hover {
-  background-color: lightcoral;
-  border-color: lightcoral;
-  color: rgba(0, 0, 0, 0.548);
+button:hover, input[type="reset"]:hover {
+  background-color: white;
+  border-color: white;
+  color: rgba(0, 0, 0, 0.966);
 }
 
-button:active {
-    color: #fff;
-    background-color: rgb(241, 155, 123);
+button:active, input[type="reset"]:active {
+    color: rgba(0, 0, 0, 0.966);
+    background-color: rgb(230, 221, 221);
     border-color: coral;
   }
 
-  button:focus {
+  /* button:focus, input[type="reset"]:focus {
     outline: none;
     box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.295);
-  }
+  } */
 
 
 .info {
     font-family: 'Ultra', serif;
-    padding-top: 10px;
-    padding-top: 10px;
+    padding: 10px;
+    color: rgba(0, 0, 0, 0.966);
 }
 
-
-
-.bounty-container, .edit-form{
+.bounties-container {
     padding: 35px;
+}
+
+.bounties-container, .edit-form{
     display: inline-grid;
     grid-template-columns: auto;
     grid-template-rows: repeat(1, 2fr);
@@ -92,9 +95,9 @@ button:active {
     margin-right: 100px;
     margin-top: 50px;
     margin-bottom: 20px;
-    /* background-color: coral;
-     */
+    background-color: coral;
+
     /* background-image:url("https://images.unsplash.com/photo-1528458965990-428de4b1cb0d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cGFwcGVyfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"); */
-    background-color: white;
+    /* background-color: white; */
     border-radius: 25px;
 }

@@ -1,46 +1,56 @@
 import React, {useState} from "react"
 
+const initialValues = {
+    editFirstName: "",
+    editLastName: "",
+    editLiving: "",
+    editBountyAmount: "",
+    editType: "",
+  }
 
-function Bounties(props){
-    const [editFirstName, setEditFirstName] = useState("")
-    const [editLastName, setEditLastName] = useState("")
-    const [editLiving, setEditLiving] = useState("")
-    const [editBountyAmount, setEditBountyAmount] = useState("")
-    const [editType, setEditType] = useState("")
-    const [isInEditMode, setIsInEditMode] = useState(false)
+function Bounties(props) {
+    const [isEditing, setIsEditing] = useState(false)
+    const [editValues, setEditValues] = useState(initialValues)
 
-    return(
-        <div className="bounty-container">
-            <div className="bounty-list">   
-                <h3 className="info">First Name: {props.firstName}</h3>
-                <h3 className="info">Last Name: {props.lastName}</h3>
-                <h3 className="info">Living: {props.living}</h3>
-                <h3 className="info">Bounty Amount: ${props.bountyAmount}</h3>
-                <h3 className="info">Type: {props.type}</h3>
-                <button onClick={()=> setIsInEditMode(prevEditmode => !prevEditmode)}>{isInEditMode === false? "Edit ": "Cancel"}</button>
-                <button onClick={()=>props.handleDeletion(props.id)}>Delete</button>
-                
+    const handleOnChangeEdit = (e) => {
+        const {name, value} = e.target
+
+        setEditValues({
+            ...editValues,
+            [name]: value
+        })
+    }
+
+    return (
+        <div className="bounties-container">
+            <div className="info">
+                <p>{props.values.firstName}</p>
+                <p>{props.values.lastName}</p>
+                <p>Living: {props.values.living}</p>
+                <p>${props.values.bountyAmount}</p>
+                <p>{props.values.type}</p>
             </div>
-            
-            {isInEditMode === true?
-                <form onSubmit={
-                    (e)=>{
-                        props.handleUpdate(e,
-                            {
-                                firstName: editFirstName, lastName: editLastName, living: editLiving, bountyAmount: editBountyAmount, type: editType
-                            }, props.id)
-                        setIsInEditMode(prevEditmode => !prevEditmode)
+            <button onClick={()=> setIsEditing(prevIsEditing => !prevIsEditing)}>{isEditing === false? "Edit ": "Cancel"}</button>
+            <button onClick={()=>props.handleDelete(props.values._id)}>Delete</button>
+
+            {isEditing?
+                <form className="edit-form" onSubmit={
+                    (e)=> {
+                        props.handlePut( e,
+                        {firstName: editValues.firstName, lastName: editValues.lastName, living: editValues.living, bountyAmount: editValues.bountyAmount, type: editValues.type}
+                        , props.values._id
+                        )
+                      setIsEditing(prevEditmode => !prevEditmode)
                     }
                 }>
-                    <input type="text" name="firstName" value={editFirstName} placeholder="First Name" onChange={(e)=>setEditFirstName(e.target.value)}/>
-                    <input type="text" name="lastName" value={editLastName} placeholder="Last Name" onChange={(e)=>setEditLastName(e.target.value)}/>
-                    <input type="text" name="living" value={editLiving} placeholder="Living" onChange={(e)=>setEditLiving(e.target.value)}/>
-                    <input type="text" name="bountyAmount" value={editBountyAmount} placeholder="Bounty Amount" onChange={(e)=>setEditBountyAmount(e.target.value)}/>
-                    <input type="text" name="type" value={editType} placeholder="Type" onChange={(e)=>setEditType(e.target.value)}/>
-                    
-                    <button>Save</button> 
+                    <input name="firstName" value={editValues.firstName} placeholder="First Name" onChange={handleOnChangeEdit} />
+                    <input name="lastName" value={editValues.lastName} placeholder="Last Name" onChange={handleOnChangeEdit} />
+                    <input name="living" value={editValues.living} placeholder="Living" onChange={handleOnChangeEdit} />
+                    <input name="bountyAmount" value={editValues.bountyAmount} placeholder="Bounty Amount" onChange={handleOnChangeEdit} />
+                    <input name="type" value={editValues.type} placeholder="Type" onChange={handleOnChangeEdit} />
+                    <button>Save</button>
                 </form>
-            :null}
+            :null }
             <hr/>
         </div>
     )
