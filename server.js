@@ -3,44 +3,13 @@ const app = express()
 const {v4: uuidv4} = require("uuid")
 
 // fake data
-const inventoryItems = [
-    {
-        name: "banana",
-        type: "food",
-        price: 200,
-        _id: uuidv4()
-    },{
-        name: "pants",
-        type: "clothing",
-        price: 2500,
-        _id: uuidv4()
-    },{
-        name: "basketball",
-        type: "toy",
-        price: 1000,
-        _id: uuidv4()
-    },{
-        name: "rockem sockem robots",
-        type: "toy",
-        price: 1500,
-         _id: uuidv4()
-    },{
-        name: "shirt",
-        type: "clothing",
-        price: 800,
-        _id: uuidv4()
-    },{
-        name: "soup",
-        type: "food",
-        price: 300,
-        _id: uuidv4()
-    },{
-        name: "flour",
-        type: "food",
-        price: 100,
-        _id: uuidv4()
-    }
+let bountyList = [
+    {firstName: "Darth", lastName: "Vader", living: "True", bountyAmount: 100000, type: "Sith", _id: uuidv4()},
+    {firstName: "Mace", lastName: "Windu", living: "True", bountyAmount: 50000, type: "Jedi", _id: uuidv4()},
+    {firstName: "Darth", lastName: "Tyranus", living: "False", bountyAmount: 10000, type: "Sith", _id: uuidv4()}
 ]
+
+// let bountyList = []
 
 // middleware
 app.use(express.json())
@@ -48,33 +17,43 @@ app.use(express.json())
 // routes
 
 // get all
-app.get("/inventory", (req, res) => {
-    res.send(inventoryItems)
+app.get("/bounty", (req, res) => {
+    res.send(bountyList)
 })
 
 // get one
-app.get("/inventory/:id", (req, res) => {
-    const id = req.params.id
-    const foundItem = inventoryItems.find(item => item._id === id)
-    res.send(foundItem)
+app.get("/bounty/:bountyId", (req, res) => {
+    const bountyId = req.params.bountyId
+    const foundBounty = bountyList.find(bounty => bounty._id === bountyId)
+    res.send(foundBounty)
 })
 
-// get by type
+app.post("/bounty", (req, res) => {
+    const newBounty = req.body
+    newBounty._id = uuidv4()
+    bountyList.push(newBounty)
+    res.send(newBounty)
 
-// localhost:5000/inventory/search/type?type=clothing
-
-app.get("/search/type", (req, res) => {
-    const type = req.query.type
-    const filteredType = inventoryItems.filter(item => item.type === type)
-    res.send(filteredType)
-    console.log(filteredType)
 })
 
-// Extra Credit:
-// Write another route where an API user can filter by a maxium price AND a minium price. You can make the maxium default to 1000000 and the minimum defualt to 0
+app.put("/bounty/:bountyId", (req, res) => {
+    const bountyId = req.params.bountyId
+    const updatedBounty = req.body
+    const bountyIndex = bountyList.findIndex(bounty => bounty._id == bountyId)
+    const updated = Object.assign(bountyList[bountyIndex], updatedBounty)
+    res.send(updated)
+    
+})
 
-// get by price
-//filter by a max and min price
+app.delete("/bounty/:bountyId", (req, res) => {
+    const bountyId = req.params.bountyId
+    const bountyIndex = bountyList.findIndex(bounty => bounty._id === bountyId)
+    const newBountyList = bountyList.splice(bountyIndex, 1)
+    res.send(newBountyList)
+    
+})
 
 // port
-app.listen(5000, ()=>{console.log("Port 5000 is running")})
+app.listen(8000, ()=> {
+    console.log("Port 8000 is running")
+})
